@@ -1,0 +1,38 @@
+------
+
+-California Themed Game
+	-Bear
+	-Catalina
+	-Avocados
+	-Sunshine
+	-Redwood
+	-Surfing
+	-Yosemite
+
+
+
+alert user "ready to play? press okay!". this will begin the game. 
+
+randomly generate a secret word from the array of secretWord.
+
+display a field called currentWord _ _ _ _ etc. indicating the legnth of the word (word.length?)
+
+call the document.onkeydown function to grab the user's letter.
+
+compare the userGuess with the letters in the secretWord
+	if the userGuess === a letter in the secretWord
+		then: -replace a  _ with that letter in the correct spot in currentWord
+		      - check to see if currentWord ==== secretWord. 
+			  - once currentWord === secretWord, alert winner they won! 
+
+	else if the userGuess !== a letter in the secretWord
+		then: - put that letter in the boneyard.
+			  - decrement the guesses tally  by 1
+					- each time the user enters a letter, record the guess to "guesses tally". begin with 10. decrement this number -- & output it on the html page. 
+					- if userGuess tally equals or greater than 10, game over.
+					- alert the player that they lost.
+
+
+
+
+
