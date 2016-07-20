@@ -1,0 +1,43 @@
+body {
+	margin:20px;
+	background-image: url('background.jpg');
+	font-family: 'Taviraj', serif;
+}
+
+.jumbotron {
+	text-align: center;
+	background-color: orange;
+	color: white;
+}
+
+.rules, #score, #jail {
+	background: rgba(255, 255, 255, 0.4);
+	text-align: center;
+	padding-top:10px;
+	padding-bottom: 10px;
+	color:navy;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.rules {
+	margin-bottom:20px;
+}
+#blanks {
+	font-size:80px;
+	font-weight:700;
+	background: rgba(255, 255, 255, 0.4);
+	margin-bottom:10px;
+	text-align:center;
+	color: navy;
+	background-image: url('license.jpg');
+	background-repeat:no-repeat;
+	background-position:center;
+	padding-top:60px;
+	padding-bottom:10px;
+}
+
+#score, #jail {
+	font-size:25px;
+}
+
+

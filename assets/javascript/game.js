@@ -1,13 +1,19 @@
 window.onload = function() {
 	
 // define variables
-	var secretWord = ['ojai', 'avocado', 'bear', 'almonds', 'surfing', 'sequoia', 'carlsbad', 'pacifc', 'sunshine'];
+	var secretWord = ['ojai', 'avocado', 'bear', 'almonds', 'surfing', 'sequoia', 'carlsbad', 'pacific', 'sunshine', 'tacos'];
 
 	var turns = 10;
+
+	var noTurns=10;
+
+	var wins =0;
 
 	var nopes =[];
 
 	var yups=[];
+
+	var correctGuess = 0;
 
 	var currentWord = secretWord[Math.floor(Math.random()*secretWord.length)];
 
@@ -29,8 +35,15 @@ window.onload = function() {
 	  console.log(yups);
 	}
 
+	var incorrect = document.getElementById("jail");
 
+	var incorrectStr ="<p>" + "wipeouts: " + nopes + "</p>";
+	incorrect.innerHTML = incorrectStr;
 
+	var output = document.getElementById("score");
+
+	var outputStr = "<p>" + "turns remaining: " + turns + "</p>" ;
+	output.innerHTML = outputStr;
 
 
 
@@ -44,7 +57,7 @@ window.onload = function() {
 
  // find the placement of each letter
 
- 	for (var i = 0; i < currentWord.length; i++) {
+ 	for (var i = 0; i < dashLength; i++) {
  		var result = currentWord.charAt(i);
  		if (result === userGuess){
  			console.log(i);
@@ -59,17 +72,15 @@ window.onload = function() {
  	}
 	
 
-	if (turns < 1) {
-		alert("game over");
-	}
+
 	
 	
 	var checks = currentWord.includes(userGuess);
 
 	if (checks) {
-		console.log("that's rad");
-		
-	}
+		correctGuess++;
+		console.log("yippie!");
+		}
 
 
 
@@ -77,6 +88,8 @@ window.onload = function() {
 	else if (checks == false) {
 		console.log("boooohooo");
 		turns --;
+		noTurns --;
+
 
 		nopes.push(userGuess);
 
@@ -87,10 +100,30 @@ window.onload = function() {
 
 		var incorrect = document.getElementById("jail");
 
-		var incorrectStr ="<p>" + "incorrect guessses: " + nopes + "</p>";
+		var incorrectStr ="<p>" + "wipeouts: " + nopes + "</p>";
 		incorrect.innerHTML = incorrectStr;
 
+		// if (noTurns ===0) {
+		// 	prompt("game over! would you like to play again?")
+		// }
+
 		}
-	
+
+	var a = yups.indexOf("_ ");
+	console.log(" here: " + a);
+
+	if (a == -1){
+			confirm ("Nice job, dude! Play again?")
+			wins++;
+			console.log(wins);
+			if (true) { window.location.reload()}
+		}
+	else if (noTurns ===0) {
+		confirm("aww gnarly bro, you lost! the answer was " + currentWord + "! wannna play again??")
+		if (true) { window.location.reload()}
 	}
+	}
+
+	
+
 }
