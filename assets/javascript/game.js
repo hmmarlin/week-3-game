@@ -19,7 +19,7 @@ window.onload = function() {
 
 	var dashLength = currentWord.length;
 
-	console.log(currentWord);
+	// to find the curren word:    console.log(currentWord);
 
 // find length of word for dash placement 
 
@@ -32,7 +32,7 @@ window.onload = function() {
 	  var dashLengthShowStr = yups;
 	  dashLengthShow.innerHTML = dashLengthShowStr;
 	  dashLengthShow.innerHTML = yupsEdited;
-	  console.log(yups);
+
 	}
 
 	var incorrect = document.getElementById("jail");
@@ -53,14 +53,12 @@ window.onload = function() {
 
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 	
-	console.log(userGuess);
 
  // find the placement of each letter
 
  	for (var i = 0; i < dashLength; i++) {
  		var result = currentWord.charAt(i);
  		if (result === userGuess){
- 			console.log(i);
 
 			yups.splice(i, 1, userGuess);
 			console.log(yups);
@@ -71,19 +69,13 @@ window.onload = function() {
  		}
  	}
 	
-
-
-	
+ // determines if the user's guess is part of secret word or not
 	
 	var checks = currentWord.includes(userGuess);
 
 	if (checks) {
 		correctGuess++;
-		console.log("yippie!");
 		}
-
-
-
 
 	else if (checks == false) {
 		console.log("boooohooo");
@@ -103,14 +95,11 @@ window.onload = function() {
 		var incorrectStr ="<p>" + "wipeouts: " + nopes + "</p>";
 		incorrect.innerHTML = incorrectStr;
 
-		// if (noTurns ===0) {
-		// 	prompt("game over! would you like to play again?")
-		// }
-
 		}
 
+// at end of game, either win or lose status & play again/
+
 	var a = yups.indexOf("_ ");
-	console.log(" here: " + a);
 
 	if (a == -1){
 			confirm ("Nice job, dude! Play again?")
